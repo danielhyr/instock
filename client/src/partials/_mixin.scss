@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+
+@mixin regular {
+    font-family: "Titillium";
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin demi {
+    font-family: "Titillium";
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin bold {
+    font-family: "Titillium";
+    font-weight: 700;
+    font-style: normal;
+}

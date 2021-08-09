@@ -1,0 +1,566 @@
+@use "../../partials/typography" as *;
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+@use "../../partials/animations" as *;
+
+.warehousedetails{
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  z-index: 1;
+  top: -4rem;
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  @include tablet {
+    top: -8rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @include desktop {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  &__chevron {
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    @include tablet {
+      top: 0px;
+    }
+    &:hover {
+      animation: 1s ease-out 0s slideFromLeft;
+      animation-iteration-count: infinite;
+
+    }
+  }
+
+  &__nav {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem 0.2rem;
+    }
+
+    @include desktop {
+      padding: 0 2rem 0.2rem;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  }
+
+  &__image {
+    margin-top: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  &-topbar {
+    @include demi;
+    color: $graphite;
+    display: none;
+    margin: 0;
+    padding: 1rem;
+    background-color: $light-grey;
+    font-size: 11px;
+    @include tablet {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+    }
+
+    &__sort {
+      width: 1rem;
+      position: relative;
+      top: 0.2rem;
+      left: 0.5rem;
+    }
+
+    &__warehouse {
+      position: absolute;
+      right: 20%;
+    }
+
+    &__category {
+      position: absolute;
+
+      right: 68%;
+    }
+
+    &__qty {
+      position: absolute;
+
+      right: 25%;
+    }
+
+    &__status {
+      position: absolute;
+
+      right: 50%;
+    }
+  }
+
+  &__title {
+    @include demi;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 0;
+    
+    @include tablet {
+      font-size: 32px;
+      line-height: 40px;
+      padding:0;
+    }
+
+    @include desktop {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__form {
+    position: relative;
+
+    @include tablet {
+      display: flex;
+    }
+    &-edit-icon{
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(300%) contrast(100%);
+
+        @include tablet {
+          position: absolute;
+          left: 13px;
+          height: 18px;
+        }
+    }
+
+    &-search {
+      width: 100%;
+      height: 36px;
+      border: 1px solid #bdc5d5;
+      box-sizing: border-box;
+      border-radius: 20px;
+      
+      @include tablet {
+        position: relative;
+        margin-right: 1rem;
+      }
+      &::placeholder {
+        padding-left: 15px;
+        color: #5c667e;
+        font-size: 13px;
+        line-height: 20px;
+        @include regular;
+      }
+
+      &-icon {
+        position: absolute;
+        right: 15px;
+        top: 6px;
+        @include tablet {
+          right: 10.5rem;
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #2e66e6;
+    border-radius: 20px;
+    margin: 1rem 0;
+    border: none;
+
+    @include tablet{
+      width: 75px;
+    }
+   
+    &-text {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        height: 20px;
+        @include demi;
+        font-size: 14px;
+        line-height: 22px;
+        color: #ffffff;
+        position:absolute;
+        right: 15px;
+      }
+    }
+  }
+
+  &__specifics {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border-top: 1px solid #BDC5D5;
+    
+
+    @include tablet {
+      padding: 1rem 2rem;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px solid #BDC5D5;
+    }
+
+
+
+    &-location {
+      @include demi;
+      font-size: 11px;
+      line-height: 16px;
+      color: #5C667E;
+      margin:0.5rem 0;
+
+      @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+    }
+
+    &-address {
+      @include regular;
+      font-size: 13px;
+      line-height: 20px;
+      color: #13182C;
+      margin:0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    &-country {
+      @include regular;
+      font-size: 13px;
+      line-height: 20px;
+      color: #13182C;
+      margin:0;
+
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+
+      @include tablet {
+        width: 300px;
+        margin-right: 5rem;
+        border-left: 1px solid #BDC5D5;
+        padding-left: 3rem;
+      }
+
+      @include desktop {
+        width: 420px;
+        margin-right: 8rem;
+        border-left: 1px solid #BDC5D5;
+        padding-left: 3rem;
+      }
+
+    }
+
+    &-contact {
+      @include demi;
+      font-size: 11px;
+      line-height: 16px;
+      color: #5C667E;
+      margin:1rem 0 0.5rem;
+
+      @include tablet {
+        margin:0 0 0.5rem;
+        font-size: 12px;
+        line-height: 18px;
+
+      }
+
+      &-name {
+        @include regular;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        margin:0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      }
+
+      &-position {
+        @include regular;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        margin:0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+        
+      }
+
+      &-information{
+        @include demi;
+        font-size: 11px;
+        line-height: 16px;
+        color: #5C667E;
+        margin:1rem 0 0.5rem;
+        
+
+        @include tablet {
+          margin:0rem 0 0.5rem;
+          font-size: 12px;
+          line-height: 18px;
+        }
+        
+      }
+
+      &-number{
+        @include regular;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        margin:0;
+
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+        
+      }
+        
+      }
+
+      &-email{
+        @include regular;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        margin:0;
+
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+        
+      }
+    }
+  }
+
+  &__information {
+    padding: 1rem 0;
+    border-top: 1px solid #bdc5d5;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &-data {
+      display: flex;
+      justify-content: space-between;
+      @include tablet {
+        width: 56%;
+      }
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1rem;
+      width: 40%;
+      margin-right: 1rem;
+      @include tablet {
+        flex-direction: row;
+        padding-left: 2rem;
+      }
+    }
+    &-status {
+      @include tablet {
+        position: absolute;
+
+        right: 50%;
+        width: 5rem;
+      }
+    }
+    &-category {
+      margin-top: 1rem;
+      @include tablet {
+        position: absolute;
+        margin: 0;
+        right: 68%;
+        width: 4.5rem;
+      }
+    }
+
+    &-warehouse {
+      &-information {
+        margin-top: 1rem;
+        @include tablet {
+          position: absolute;
+          right: 21%;
+          margin: 0;
+          width: 4rem;
+        }
+      }
+    }
+
+    &-quantity {
+      padding-right: 2.5rem;
+
+      &-information {
+        margin-top: 1rem;
+        @include tablet {
+            position: absolute;
+
+            right: 25%;
+          margin: 0;
+          width: 3rem;
+        }
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      flex-direction: column;
+      padding-right: 1.5rem;
+      width: 7rem;
+    }
+  }
+
+  &__subheader {
+    @include demi;
+    font-size: 11px;
+    line-height: 16px;
+    margin: 0;
+    color: #5c667e;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__itemname {
+    margin: 0;
+    text-decoration: none;
+    @include demi;
+    font-size: 13px;
+    line-height: 20px;
+    color: #2e66e6;
+    margin: 0;
+    margin-top: 0.3rem;
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__category {
+    &-details {
+      @include regular;
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 0.3rem;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__warehouse {
+    &-info {
+      @include regular;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 0;
+      margin-top: 0.3rem;
+    }
+
+    &-status {
+      @include regular;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 0;
+      margin-top: 0.3rem;
+
+      @include tablet {
+        position: relative;
+        left: 1rem;
+      }
+      &--outstock {
+        @include bold;
+        background-color: rgba(201, 69, 21, 0.07);
+        color: $red;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 20px;
+        @include tablet {
+          min-width: 5rem;
+        }
+      }
+      &--instock {
+        @include bold;
+        background-color: rgba(21, 132, 99, 0.07);
+        color: $green;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &__actions {
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      padding: 0 1rem;
+      position: relative;
+      right: 2rem;
+    }
+  }
+
+  &__action {
+    &-trash {
+      margin-right: 1rem;
+    }
+  }
+}
+
+

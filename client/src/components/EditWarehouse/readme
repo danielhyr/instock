@@ -1,0 +1,26 @@
+ // onSaveEdits = () => {
+  //   // Check that all the relevant fields are filled in
+  //   // If they aren't, show an error message
+  //   // If they are, submit
+  //   const warehouse = this.state.editWarehouse;
+  //   const contact = warehouse.contact;
+  //   // Input validation
+  //   if (
+  //     warehouse.name && warehouse.address && warehouse.city && warehouse.country &&
+  //     contact && contact.name && contact.position && contact.number && contact.email
+  //   ) {
+  //     // Make post request
+  //     // axios.post(/${this.props.match.params.id}) {
+  //       // Make request
+  //     }
+  //   } else {
+  //     this.setState({ errorMessage: "Must fill in all fields!" });
+  //   }
+  // }
+
+  // Step 1: have 'onChange()' functions for all input fields
+  // --> 4 different state fields, that get updated individually by each input field in their onChange functions
+  // Step 2: have 'onSave()' function that gets run when the save button is clicked
+  // This function checks if the input fields are set properly
+  // --> If so submit properly -- make a post request for this ID
+  // --> If not, show error message saying that one of the fields is undefined

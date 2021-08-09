@@ -1,0 +1,20 @@
+
+@use "../../partials/typography" as *;
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+
+
+.footer {
+    display: flex;
+    font-size: 11px;
+    justify-content: center;
+    margin-bottom: 4rem;
+    @include tablet {
+        margin-bottom: 2rem;
+        font-size: 12px;
+    }
+    @include desktop {
+        margin-bottom: 3rem;
+    }
+}
+

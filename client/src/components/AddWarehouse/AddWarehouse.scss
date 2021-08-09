@@ -1,0 +1,438 @@
+@use "../../partials/typography" as *;
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+.addwarehouse {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 125px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    @include tablet {
+        top: 6rem;
+        left: 2rem;
+        right: 2rem;
+      }
+      @include desktop {
+        left: 5rem;
+        right: 5rem;
+      }
+    &__nav{
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @include tablet {
+          display: flex;
+          align-items: center;
+          padding: 0 2rem 0;
+        }
+        @include desktop {
+          padding: 0 2rem 0;
+        }
+    }
+    &__image {
+        padding-right: 0.5rem;
+    }
+  &__title {
+    @include demi;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 0;
+    @include tablet {
+      padding-left: 0;
+      padding: 1.5rem 0 1.56rem;
+    }
+    @include desktop {
+      padding-left: 1.5rem;
+      font-size: 32px;
+      line-height: 40px;
+      padding: 1.4rem 0;
+    }
+  }
+   &__wrapper {
+        display: none;
+        &-error{
+        display: flex;
+        align-items: center;
+        margin-top:0;
+        }
+        &-image {
+        width: 20px;
+        height: 14px;
+        }
+        &-text {
+        @include regular;
+        font-size: 12px;
+        line-height: 18px;
+        color: #C94515;
+        }
+  }
+  &__details {
+      padding:0 1rem 1rem;
+      border-top: 1px solid #BDC5D5;
+      @include tablet {
+        width: -webkit-fill-available;
+        border:0;
+        padding: 0 2rem 1rem 0;
+      }
+      &-title {
+        font-family: "Titillium";
+        font-weight: 600;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 28px;
+        color: #13182C;
+        padding: 1rem 0 1.5rem;
+        @include tablet {
+            margin: 0;
+            font-size: 24px;
+            line-height: 32px;
+            padding: 0.5rem 0 2rem;
+        }
+      }
+    &-top {
+        margin-bottom: 1rem
+    }
+    &-name {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            padding-left: 1rem;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-mid {
+        margin-bottom: 1rem
+    }
+    &-address {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-city {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-bottom {
+        margin-bottom: 1rem
+    }
+    &-country {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+  }
+  &__contact{
+    &-details {
+        padding:0 1rem;
+        border-top: 1px solid #BDC5D5;
+        @include tablet {
+            width: -webkit-fill-available;
+            border:0;
+            border-left: 1px solid #BDC5D5;;
+            padding: 0 0 0 2rem;
+          }
+        &-title {
+            @include demi;
+            font-size: 20px;
+            line-height: 28px;
+            color: #13182C;
+            padding: 1rem 0 1.5rem;
+            @include tablet {
+                margin: 0;
+                font-size: 24px;
+                line-height: 32px;
+                padding: 0.5rem 0 2rem;
+            }
+        }
+    }
+    &-top {
+        margin-bottom: 1rem;
+    }
+
+&-name {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-mid {
+        margin-bottom: 1rem;
+    }
+    &-position {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input{
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-number {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+    &-bottom {
+        margin-bottom: 1rem;
+    }
+    &-email {
+        @include demi;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+        &-input {
+            height: 36px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            position: relative;
+            @include regular;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 1rem;
+            &:focus {
+                border: 1px solid #2E66E5;
+                outline: 0;
+            }
+        }
+        &-error {
+            &:focus {
+                border: 1px solid #C94515;
+                outline: 0;
+            }
+        }
+    }
+  }
+    &__button {
+        &-section {
+            background: rgba(247, 248, 249, 0.7);
+            border-radius: 0px 0px 3px 3px;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            margin: 1rem 0 0 0;
+            @include tablet {
+                justify-content: flex-end;
+            }
+        }
+    }
+    &__cancel{
+        &-button{
+            display: flex;
+            align-items: center;
+            padding: 8px 34px;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            font-family: Titillium Web;
+            @include demi;
+            font-size: 13px;
+            line-height: 20px;
+            color: #5C667E;
+            &:hover {
+                border: 1px solid #2E66E5;
+            }
+            @include tablet{
+                margin-right:1rem;
+                padding: 8px 21px;
+            }
+        }
+    }
+    &__save{
+        &-button{
+            display: flex;
+            align-items: center;
+            padding: 8px 43px;
+            background: #2E66E6;
+            border-radius: 20px;
+            font-family: Titillium Web;
+            @include demi;
+            font-size: 13px;
+            line-height: 20px;
+            color: #FFFFFF;
+            border: 0;
+            &:hover {
+                background: #232940;
+                outline: 0;
+            }
+            @include tablet {
+                padding: 8px 28px;
+            }
+        }
+    }
+}
+.top-section {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem 0;
+        border-top: 1px solid #BDC5D5;;
+    }
+}

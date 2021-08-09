@@ -1,0 +1,353 @@
+@use "../../partials/typography" as *;
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+
+h2{
+    padding: 0;
+    margin: 0;
+}
+.addItem {
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    z-index: 1;
+    top: -4rem;
+    background: #ffffff;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    padding-top: 1rem;
+
+    @include tablet {
+      top: -8rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    @include desktop {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+}
+
+.itemForm {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 125px;
+    background: #ffffff;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+
+    @include tablet {
+        top: 6rem;
+        left: 2rem;
+        right: 2rem;
+      }
+      @include desktop {
+        left: 5rem;
+        right: 5rem;
+      }
+
+      &__header {
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    
+        @include tablet {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0 2rem 0.7rem;
+        }
+    
+        @include desktop {
+          padding: 0 4rem  0;
+        }
+
+        &--title{
+            @include demi;
+    padding: 0 0 1rem 0;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 0;
+    
+    @include tablet {
+        
+      padding-left: 0;
+      padding: 0  0.9rem 0;
+    }
+
+    @include desktop {
+      padding-left: 1.5rem;
+      font-size: 32px;
+      line-height: 40px;
+      padding: 0 0 1.15rem 0;
+        }
+    }
+
+        &--back{
+            padding-right: .5rem;
+            padding-left: .5rem;
+            padding-bottom: 0.8rem;
+            position: absolute;
+            left: 0;
+            @include tablet {
+                padding: 0;
+                padding-left: .5rem;
+
+            }
+            @include desktop {
+                padding-bottom: 1rem;
+                padding-left: 2rem;
+
+            }
+            
+        }
+    }
+
+    &__itemDetails{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $cloud;
+        padding: 1rem 1.5rem;
+
+        @include tablet {
+            width: 45%;
+            border-right: 1px solid $cloud ;
+            padding: 0rem 2rem;
+            margin: 1.5rem 0rem;
+            border-bottom: 0;
+
+        }
+
+        @include desktop {
+            padding: 0rem 2.5rem;
+        }
+    }
+
+    &__availability{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+
+        @include tablet {
+            width: 45%;
+            padding: 0rem 2rem;
+            margin: 1.5rem 0rem;
+
+        }
+
+        @include desktop {
+            padding: 0rem 2.5rem;
+        }
+    }
+    
+    &__form-container{
+        @include tablet{
+            display: flex;
+        }
+    }
+    
+    &__form{
+        border-top: 1px solid $cloud;
+
+        &--title{
+            @include demi;
+            size: 20px;
+            line-height: 28px;
+            padding-bottom: 2rem;
+
+            @include tablet{
+                size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        &--label{
+            @include demi;
+            padding-bottom: .25rem;
+            font-size: 13px;
+            line-height: 20px;
+
+            @include tablet{
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+
+        &--input{
+            background-color: #ffffff;
+            border: 1px solid $cloud;
+            border-radius: 20px;
+            padding: .5rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        &--input:focus{
+            border: 1px solid #2E66E5;
+            outline: 0;
+        }
+
+        &--input::placeholder{
+            @include regular;
+            font-size: 13px;
+            line-height: 20px;
+            color: $slate;
+
+            @include tablet{
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+
+        &--select{
+            appearance: none;
+            background-image: url(../../assets/icons/arrow_drop_down-24px.svg);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: right;
+            background-color: #ffffff;
+            border: 1px solid $cloud;
+            border-radius: 20px;
+            padding: .5rem 1rem;
+        }
+
+        &--select:focus{
+            border: 1px solid #2E66E5;
+            outline: 0;
+        }
+        
+        &--quantity{
+            @include desktop{
+                width: 7.625rem;
+            }
+        }
+
+    }
+
+    &__radio{
+        display: flex;
+        width: 100%;
+    
+        &--left{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    
+        &--right{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-left: 35%;
+
+            @include tablet{
+                margin-left: 0;
+            }
+        }
+
+        &--text{
+            @include regular;
+            font-size: 13px;
+            line-height: 20px;
+            color: $slate;
+
+            @include tablet{
+                font-size: 14px;
+                line-height: 20px;
+                margin-right: 2.5rem;
+            }
+        }
+
+        &--select{
+            margin-right: .5rem;
+        }
+    }
+
+    &__buttons{
+        background-color: rgba(247, 248, 249, 0.7);
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet{
+            padding: 1.5rem 2rem;
+            justify-content: flex-end;
+        }
+
+        @include desktop{
+            padding: 1.5rem 2.5rem;
+        }
+    }
+
+    &__add-button{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem 1.5rem;
+            background: #2E66E6;
+            border-radius: 20px;
+            font-family: Titillium Web;
+            @include demi;
+            font-size: 13px;
+            line-height: 20px;
+            color: #FFFFFF;
+            border: 0; 
+            width: 47%;   
+            
+            @include tablet{
+                width: fit-content;
+            }
+    }
+
+    &__cancel-button{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem 1.5rem;
+            background: #FFFFFF;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            font-family: Titillium Web;
+            @include demi;
+            font-size: 13px;
+            line-height: 20px;
+            color: #5C667E;
+            width: 47%;
+
+            @include tablet {
+                width:fit-content;
+                margin-right: 1rem;
+            }
+    }
+
+    &__quantity-container{
+        display: flex;
+        flex-direction: column;
+
+        &--hide{
+            display: none;
+        }
+    }
+
+    &__error {
+        display: flex;
+        align-items: center;
+
+        &--text{ 
+            color: #C94515;
+            @include regular;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        &--image{
+            width: 1rem;
+            height: 1rem;
+            padding-right: .5rem;
+        }
+    }
+
+}

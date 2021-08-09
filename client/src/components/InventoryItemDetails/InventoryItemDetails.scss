@@ -1,0 +1,180 @@
+@use "../../partials/typography" as *;
+@use "../../partials/mixin" as *;
+@use "../../partials/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.itemDetails {
+    padding-top: 1rem;
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    z-index: 1;
+    top: -4rem;
+  
+    background: #ffffff;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    @include tablet {
+      top: -8rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    @include desktop {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+
+
+    &-status {
+        @include regular;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0;
+        margin-top: 0.3rem;
+  
+        @include tablet {
+          position: relative;
+        }
+        &--outstock {
+          @include bold;
+          background-color: rgba(201, 69, 21, 0.07);
+          color: $red;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding: 4px 6px;
+          border-radius: 20px;
+          @include tablet {
+            min-width: 5rem;
+          }
+        }
+        &--instock {
+          @include bold;
+          background-color: rgba(21, 132, 99, 0.07);
+          color: $green;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding: 4px 6px;
+          border-radius: 20px;
+        }
+      }
+
+    &__header {
+        border-bottom: 1px solid #bdc5d5;
+        display: flex;
+        align-items: center;
+
+        &--back {
+            padding-left: 1.5rem;
+            padding-right: 0.5rem;
+
+            @include tablet {
+                padding-left: 2rem;
+            }
+
+            @include desktop {
+                padding-left: 2.5rem;
+            }
+        }
+
+        &--name {
+            @include demi;
+            padding: 1.5rem 0rem;
+            font-size: 28px;
+            line-height: 36px;
+            margin: 0;
+
+            @include tablet {
+                padding: 2rem 0rem;
+                font-size: 32px;
+                line-height: 40px;
+            }
+        }
+
+        &--edit {
+            margin-left: auto;
+            padding-right: 1.5rem;
+
+            @include desktop {
+                padding-right: 2.5rem;
+            }
+        }
+    }
+    &__info {
+        margin: 1rem 1.5rem;
+        box-sizing: border-box;
+
+        @include tablet {
+            margin: 1.5rem 2rem;
+            display: flex;
+        }
+        @include desktop {
+            margin: 1.5rem 2.5rem;
+        }
+
+        &--header {
+            @include demi;
+            font-size: 11px;
+            line-height: 16px;
+            color: $slate;
+            padding-bottom: 0.25rem;
+
+            @include tablet {
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+
+        &--text {
+            @include regular;
+            font-size: 13px;
+            line-height: 20px;
+            color: $instock-black;
+            padding-bottom: 1rem;
+
+            @include tablet {
+                font-size: 14px;
+                line-height: 22px;
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        &--first-half {
+            @include tablet {
+                width: 50%;
+                box-sizing: border-box;
+                padding-right: 2rem;
+                border-right: 1px solid $cloud;
+            }
+
+            @include desktop {
+                padding-right: 2.5rem;
+            }
+        }
+
+        &--second-half {
+            @include tablet {
+                width: 50%;
+                box-sizing: border-box;
+                padding-left: 2rem;
+            }
+
+            @include desktop {
+                padding-left: 2.5rem;
+            }
+        }
+    }
+
+    &__stock-container {
+        display: flex;
+    }
+
+    &__quantity {
+        margin-left: 40%;
+    }
+}

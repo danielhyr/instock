@@ -1,0 +1,63 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixin' as *;
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    background-color: $graphite;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: $mobile-margins*1.5;
+    padding-bottom: $mobile-margins;
+    height: 150px;
+    @include tablet {
+        flex-direction: row;
+        padding-bottom: 1.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        position: relative;
+        bottom: 3.5rem;
+        height:190px;
+    }
+    @include desktop {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        height:190px;
+    }
+
+    &-container {
+        width: 100%;
+        display: flex;
+        padding-top: $mobile-margins;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-top: 0px;
+
+        }
+        &__link{
+            text-decoration: none;
+            color:$cloud;
+            width: 50%;
+            text-align: center;
+            padding: 0.5rem;
+            margin:0 1rem;
+            border-radius: 20px;
+            @include tablet {
+                min-width: 107px;
+                width: 10%;
+                margin:0;
+
+
+            }
+            &:hover {
+                background-color: $instock-black;
+                color: $white;
+            }
+        }
+    }
+}
